@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATCH OUT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(0, 0, 0); /* Set the background color to black */
+        }
+
+        /* Styling each button by its ID */
+        #a {
+            background-color: red;
+        }
+
+        #aa {
+            background-color: green;
+        }
+
+        #aaa {
+            background-color: blue;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block; /* Make the buttons block-level elements */
+            font-size: 16px;
+            margin: 10px auto; /* Center the buttons and add vertical space */
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid rgb(255, 255, 255);
+            width: 80vw; /* Make the buttons responsive */
+            max-width: 300px; /* Set a max-width for the buttons */
+        }
+     
+        h1 {
+            background-color: white; /* White background for the layer */
+            padding: 20px; /* Adjusted padding */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Set a width relative to the parent (body) */
+            max-width: 800px;
+            margin: 0 auto; /* Center the layer horizontally */
+        }
+
+        .red-layer, .green-layer {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80vw;
+            height: 60vh;
+            max-width: 500px;
+            max-height: 500px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none; /* Start with the layer hidden */
+        }
+
+        #redlayer {
+            color: rgb(199, 38, 38);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #firstbio, #secondbio {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        #greenlayer {
+            color: rgb(37, 200, 31);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .ok, .ok2 {
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 10px auto;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid rgb(255, 255, 255);
+            width: 80vw;
+            max-width: 300px;
+        }
+
+        .ok {
+            background-color: rgb(188, 27, 27);
+        }
+
+        .ok2 {
+            background-color: rgb(115, 212, 18);
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            #firstbio, #secondbio {
+                font-size: 16px;
+            }
+
+            .red-layer, .green-layer {
+                width: 90vw;
+                height: 50vh;
+            }
+
+            .button, .ok, .ok2 {
+                width: 90vw;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MIGHT ALTERNATIVE BIO THAT MY TRICK SOME</h1>
+    <p>Click a button to see what happens!</p>
+
+    <button class="button" id="a" onclick="toggleLayer()">من أنا و ماذا أفعل</button>
+    <button class="button" id="aa" onclick="toggleLayer2()">كيف من المفترض أن تتعامل معي</button>
+    <button class="button" id="aaa" onclick="alert('got you stupid..... even if you in inspect mode')">نيتي الصادقة</button>
+
+    <div class="red-layer">
+        <div id="redlayer">
+            من أنا و ماذا أفعل
+        </div>
+        <div id="firstbio">
+            أنا فاديس عبد الحميد من مواليد 2001 كانت هوايتي المسيقة ولازلت أمارسها لأهذاف ربحية لسوء الهدف مهنتي صناعت الألحان الغنائية و تسجيل الأغاني و أيضا صناعت المرأيات يمنك مراسلتي إن كنت محتاج إلى خدمة متعلقة بالصوتيات و السمعيات
+        </div>
+        <button class="ok">ok</button>
+    </div>
+
+    <div class="green-layer">
+        <div id="greenlayer">
+            من أنا و ماذا أفعل
+        </div>
+        <div id="secondbio">
+              لا تتقلني  لاتتعاطف معي كتيرا لا تسمح لي أن أتعاطف معك كتيرا لا تجبرني أو تنتضر مني أن أتعامل معك كما يتعامل معك الأخرون كن صريح معي أهرب إن شعرت أنني سوف أنقض عليك
+        </div>
+        <button class="ok2">ok</button>
+    </div>
+
+    <script>
+        function toggleLayer() {
+            var layer = document.querySelector('.red-layer');
+            if (layer.style.display === 'none' || layer.style.display === '') {
+                layer.style.display = 'block';
+            } else {
+                layer.style.display = 'none';
+            }
+        }
+
+        document.querySelector('.ok').addEventListener('click', function() {
+            var layer = document.querySelector('.red-layer');
+            layer.style.display = 'none'; // Hide the entire layer
+        });
+
+        function toggleLayer2() {
+            var layer2 = document.querySelector('.green-layer');
+            if (layer2.style.display === 'none' || layer2.style.display === '') {
+                layer2.style.display = 'block';
+            } else {
+                layer2.style.display = 'none';
+            }
+        }
+
+        document.querySelector('.ok2').addEventListener('click', function() {
+            var layer2 = document.querySelector('.green-layer');
+            layer2.style.display = 'none'; // Hide the entire layer
+        });
+    </script>
+
+</body>
+</html>
